@@ -14,7 +14,6 @@ exports.hashPass = async (req, res, next) => {
 exports.unHash = async (req, res, next) => {
     try {
         req.user = await User.findOne({ username: req.body.username });
-        console.log(req.user);
         if (
             req.user &&
             (await bcrypt.compare(req.body.password, req.user.password))

@@ -1,6 +1,5 @@
-export const logIn = async (username, password, setUser) => {
+export const submitLoginForm = async (username, password, setUser) => {
     try {
-        console.log("about to fetch");
         const response = await fetch(`${process.env.REACT_APP_REST_API}login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -9,7 +8,6 @@ export const logIn = async (username, password, setUser) => {
                 password
             }),
         });
-        console.log("fetch done");
         const data = await response.json();
         console.log(data);
         setUser(data.username);
@@ -20,7 +18,6 @@ export const logIn = async (username, password, setUser) => {
 
 export const signUp = async (username, email, password, setUser, setError) => {
     try {
-        console.log("about to fetch");
         const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -30,7 +27,6 @@ export const signUp = async (username, email, password, setUser, setError) => {
                 password
             }),
         });
-        console.log("fetch done");
         const data = await response.json();
         setUser(data.username);
     } catch (error) {

@@ -10,7 +10,6 @@ export const SignupForm = ({setUser, setNeedsAccount}) => {
     const submitHandler = (e) => {
         e.preventDefault();
         signUp(username, email, password, setUser, setError);
-        setNeedsAccount(false);
     }
 
     return(
@@ -23,8 +22,7 @@ export const SignupForm = ({setUser, setNeedsAccount}) => {
             <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}/>
             {error && <p className="errorMessage">{error}</p>}
             <button type="submit">Sign Up</button>
-            <p onClick={() => setNeedsAccount(false)}
-            >Already a user? Log in</p>
+            <p onClick={() => setNeedsAccount(false)}>Already a user? Log in</p>
         </form>
     )
 }
