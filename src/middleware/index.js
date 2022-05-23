@@ -1,13 +1,23 @@
 const bcrypt = require("bcryptjs/dist/bcrypt");
 const User = require("../user/userModel");
 
+exports.hashPass = async (req, res, next) => {
+    try {
+        req.body.password = await bcrypt.hash(req.body.password, 8);
+        next();
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ err: error.message });
+    }
+};
+
 exports.unHash = async (req, res, next) => {
     try {
         req.user = await User.findOne({ username: req.body.username });
         console.log(req.user);
         if (
-            req.user && /**/ req.body.password == req.user.password
-            // (await bcrypt.compare(req.body.password, req.user.password))
+            req.user &&
+            (await bcrypt.compare(req.body.password, req.user.password))
         ) {
             next();
         } else {
