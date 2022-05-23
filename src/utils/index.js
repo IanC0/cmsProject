@@ -30,9 +30,11 @@ export const signUp = async (username, email, password, setUser, setError) => {
             }),
         });
         const data = await response.json();
+        if (data.error) {
+            throw new Error("Account already exists");
+        }
         setUser(data.username);
     } catch (error) {
-        setError("Could not create an account");
-        console.log(`The error object is: ${error}`);
+        setError(error.message);
     }
 }
