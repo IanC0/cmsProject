@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&family=Lora:ital@1&family=Montserrat:wght@400;600&display=swap');
+
+/* ### global css variables ### */
+:root {
+    /* colours */
+    --light-shades: #F3F7F8;
+    --pods: #A4B4CA;
+    --main-colour: #3d78a1;
+    --primaryText: #293a57;
+    --warningText: #ff0000;
+
+    /* items that were in colour chart not used: 
+    --lightBlue:  #7f91da;
+    --dark-accent: #98AFC6;
+    --dark-shades: #538DDA;
+    */
+
+    /* fonts */
+    --mainHeaderFontFamily:'Montserrat', sans-serif;    
+    --introTextFontFamily: 'Lora', serif;
+    --paragraphFontFamily: 'Hind Madurai', sans-serif;
+    --mainHeaderH1FontSize: 64px;
+    --introTextPFontSize: 36px;
+    --otherHeadingsH2FontSize: 24px;
+    --paragraphFontSize: 24px;
+
+}
+
+h1 {
+    font-family: var(--mainHeaderFontFamily);
+    font-size: var(--mainHeaderH1FontSize);
+    color: var(--primaryText);
+    font-weight: 600px;
+}
+.introText{
+    font-family: var(--introTextFontFamily);
+    font-size: var(--introTextPFontSize);
+    color: var(--primaryText);
+    font-style: italic;
+    font-size: var(--introTextPFontSize);
+}
+h2 {
+    font-family: var(--mainHeaderFontFamily);
+    font-size: var(--mainHeaderH1FontSize);
+    color: var(--primaryText);
+    font-size: var(--otherHeadingsH2FontSize); 
+    font-weight: 400px;
+}
+p {
+    font-family: var(--paragraphFontFamily);
+    font-size: var(--paragraphFontSize);
+    color: var(--primaryText);
+}
+.warningText {
+    color: red;
+}
+
