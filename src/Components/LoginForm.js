@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { logIn } from '../utils';
 
 export const LoginForm = ({setUser, setNeedsAccount}) => {
     const [username, setUsername] = useState();
@@ -7,8 +8,7 @@ export const LoginForm = ({setUser, setNeedsAccount}) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setError(`${username}! You shall not paaaaaasssssssss!! ${password} is incorrect!!`);
-        /*signIn(username, password, setError)*/;
+        logIn(username, password, setUser, setError);
     }
 
     return(

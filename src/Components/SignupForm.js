@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { signUp } from "../utils";
 
 export const SignupForm = ({setUser, setNeedsAccount}) => {
     const [username, setUsername] = useState();
@@ -8,8 +9,7 @@ export const SignupForm = ({setUser, setNeedsAccount}) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setError(`${username}, you can't currently sign up with details ${email} and ${password}`);
-        /*signIn(username, password, setError)*/;
+        signUp(username, email, password, setUser, setError);
     }
 
     return(

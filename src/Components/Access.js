@@ -10,8 +10,8 @@ export const AccessForm = ({setUser}) => {
 
     return(
         <div id="accessForm">
-            {needsAccount && <SignupForm setNeedsAccount={setNeedsAccount} />}
-            {!needsAccount && <LoginForm setNeedsAccount={setNeedsAccount} />}
+            {needsAccount && <SignupForm setUser={setUser} setNeedsAccount={setNeedsAccount} />}
+            {!needsAccount && <LoginForm setUser={setUser} setNeedsAccount={setNeedsAccount} />}
         </div>
     )
 }
