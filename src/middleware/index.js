@@ -23,7 +23,6 @@ exports.unHash = async (req, res, next) => {
             throw new Error("Incorrect Credentials");
         }
     } catch (error) {
-        console.log(error);
         res.status(500).send({ err: error.message });
     }
 }

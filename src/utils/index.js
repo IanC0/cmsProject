@@ -1,4 +1,4 @@
-export const submitLoginForm = async (username, password, setUser) => {
+export const submitLoginForm = async (username, password, setError, setUser) => {
     try {
         const response = await fetch(`${process.env.REACT_APP_REST_API}login`, {
             method: "POST",
@@ -9,10 +9,12 @@ export const submitLoginForm = async (username, password, setUser) => {
             }),
         });
         const data = await response.json();
-        console.log(data);
+        if (data.err) { 
+            throw new Error(data.err)
+        };
         setUser(data.username);
     } catch (error) {
-        console.log(error)
+        setError(error.message);
     }
 }
 
@@ -31,6 +33,6 @@ export const signUp = async (username, email, password, setUser, setError) => {
         setUser(data.username);
     } catch (error) {
         setError("Could not create an account");
-        console.log(error)
+        console.log(`The error object is: ${error}`);
     }
 }

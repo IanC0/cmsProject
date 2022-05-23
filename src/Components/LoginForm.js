@@ -8,7 +8,7 @@ export const LoginForm = ({setUser, setNeedsAccount}) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        submitLoginForm(username, password, setUser, setError);
+        submitLoginForm(username, password, setError, setUser);
     }
 
     return(
