@@ -1,11 +1,11 @@
 const { Router } = require("express");
-const { addUser, listUsers } = require("./userControllers");
-// const { checkEmailValid, checkEmailValidUpdate, hashPass, comparePass } = require("../middleware");
+const { addUser, login, listUsers } = require("./userControllers");
+const { unHash } = require("../middleware");
 
 const userRouter = Router();
 
 // use http verb post to add data to our movie endpoint
-// userRouter.post("/login", getUser, comparePass); /* Should this be post? */
+userRouter.post("/login", unHash, login);
 
 userRouter.post("/user", addUser); /*checkEmailValid, hashPass,*/ 
 userRouter.get("/user", listUsers);

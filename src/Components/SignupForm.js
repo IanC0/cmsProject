@@ -10,6 +10,7 @@ export const SignupForm = ({setUser, setNeedsAccount}) => {
     const submitHandler = (e) => {
         e.preventDefault();
         signUp(username, email, password, setUser, setError);
+        setNeedsAccount(false);
     }
 
     return(
