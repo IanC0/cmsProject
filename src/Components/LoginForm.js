@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { submitLoginForm } from '../utils';
 
 export const LoginForm = ({setUser, setNeedsAccount}) => {
     const [username, setUsername] = useState();
@@ -7,8 +8,7 @@ export const LoginForm = ({setUser, setNeedsAccount}) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setError(`${username}! You shall not paaaaaasssssssss!! ${password} is incorrect!!`);
-        /*signIn(username, password, setError)*/;
+        submitLoginForm(username, password, setError, setUser);
     }
 
     return(
@@ -17,7 +17,7 @@ export const LoginForm = ({setUser, setNeedsAccount}) => {
             <input type="text" id="username" name="username" onChange={(e) => setUsername(e.target.value)}/>
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}/>
-            {error && <p className="errorMessage">{error}</p>}
+            {error && <p className="warningText">{error}</p>}
             <button type="submit">Log In</button>
             <p onClick={() => setNeedsAccount(true)}>Sign up</p>
         </form>

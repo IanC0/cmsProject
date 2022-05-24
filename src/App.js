@@ -1,10 +1,16 @@
+import { useState } from "react";
 import './style.css';
+import { AccessForm } from './Components/Access';
 import { Sidebar } from "./Components/Sidebar"
 
+
 function App() {
+  const [user, setUser] = useState();
+
   return (
     <div className="App">
-     <Sidebar />
+      {!user && <AccessForm setUser={setUser} />}
+      {user && <Sidebar />}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { signUp } from "../utils";
 
 export const SignupForm = ({setUser, setNeedsAccount}) => {
     const [username, setUsername] = useState();
@@ -8,8 +9,7 @@ export const SignupForm = ({setUser, setNeedsAccount}) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        setError(`${username}, you can't currently sign up with details ${email} and ${password}`);
-        /*signIn(username, password, setError)*/;
+        signUp(username, email, password, setUser, setError);
     }
 
     return(
@@ -20,10 +20,9 @@ export const SignupForm = ({setUser, setNeedsAccount}) => {
             <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)}/>
             <label htmlFor="password">Password</label>
             <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}/>
-            {error && <p className="errorMessage">{error}</p>}
+            {error && <p className="warningText">{error}</p>}
             <button type="submit">Sign Up</button>
-            <p onClick={() => setNeedsAccount(false)}
-            >Already a user? Log in</p>
+            <p onClick={() => setNeedsAccount(false)}>Already a user? Log in</p>
         </form>
     )
 }
