@@ -134,15 +134,20 @@ p, a, td {
     display: flex;
     justify-content: center;
     padding: 3px;
+    height: 100%;
 }
 .podTable {
     width:98%;
+    height: 97%;
     text-align: center;    
     border-collapse: collapse;
-    
+    display:block;
+    white-space: nowrap;
+    overflow-x: scroll;
     }
 .podTable th {
     font-size: 14px;
+    width: 43%;
 }
 .podTable td {
     font-size: 14px;

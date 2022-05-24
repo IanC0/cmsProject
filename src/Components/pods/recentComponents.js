@@ -24,6 +24,111 @@ export const RecentComponents = () => {
                                 <td>Button</td>
                                 <td>01/02/2022</td>
                             </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
+                            <tr>
+                                <td>Example Name 2</td>
+                                <td>Button</td>
+                                <td>01/02/2022</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
