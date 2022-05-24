@@ -184,6 +184,11 @@ p, a, td, label, select {
 .inputGroup {
     display: flex;
     margin-bottom: 0.5rem;
+    justify-content: space-between;
+}
+
+label {
+    width: 15%;
 }
 
 .inputGroup input, 
@@ -191,12 +196,7 @@ p, a, td, label, select {
 .inputGroup select,
 #htmlDisplay {
     margin: 0 0.5rem;
-    width: 100%;
-}
-
-.inputGroup textarea {
-    margin: 0 0.5rem;
-    width: 100%;
+    width: 85%;
 }
 
 #htmlDisplay {
