@@ -1,6 +1,6 @@
 import { useState } from "react";
 import './style.css';
-import { AccessForm } from './Components/Access';
+import { AccessForm } from './Components/AccessForm';
 import { MainApp } from './Components/mainApp'
 
 
