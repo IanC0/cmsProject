@@ -107,6 +107,7 @@ p, a, td {
 
 
 /* PODS */
+
 .halfPod {
     width: 36vw;
     height: 60vh;
@@ -170,3 +171,10 @@ p, a, td {
   border-right: 0;
     }
     
+
+
+#supportMainContainer {
+    padding-left: 15px;
+    padding-right:15px;
+    padding-top: 15px;
+}
