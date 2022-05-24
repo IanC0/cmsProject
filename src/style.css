@@ -62,7 +62,7 @@ p, a {
     min-width: 200px;
     height: 100vh;
     background-color: var(--main-colour);
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     top: 0;
     padding-top: 15px;
@@ -91,4 +91,41 @@ p, a {
 }
 #sideBarMenuCreateComp {
     background-color: var(--light-shades);
+}
+
+
+#mainContainer {
+    display: flex;
+    
+}
+#mainBodyContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+/* PODS */
+.halfPod {
+    width: 36vw;
+    height: 60vh;
+    background-color: var(--pods);
+    border-radius: 5px;
+}
+.halfPodHeader {
+    height: 8%;
+}
+
+#recentComponentsBodyContainer {
+    display: flex;
+    justify-content: center;
+    height: 98%;
+
+
+}
+#recentComponentsBody {
+    width: 95%;
+    height:87%;
+    background-color: var(--light-shades);
+    border-radius: 12px;
 }
