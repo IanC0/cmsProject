@@ -48,7 +48,7 @@ h2, th {
     font-weight: 400px;
     padding-left: 8px;
 }
-p, a, td, label {
+p, a, td, label, select {
     font-family: var(--paragraphFontFamily);
     font-size: var(--paragraphFontSize);
     color: var(--primaryText);
@@ -188,6 +188,7 @@ p, a, td, label {
 
 .inputGroup input, 
 .inputGroup textarea,
+.inputGroup select,
 #htmlDisplay {
     margin: 0 0.5rem;
     width: 100%;
