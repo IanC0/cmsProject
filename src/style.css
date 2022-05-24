@@ -4,7 +4,8 @@
 :root {
     /* colours */
     --light-shades: #F3F7F8;
-    --pods: #A4B4CA;
+    --pods: #A4B4CA;   
+    --pods1:#c5cfdd;
     --main-colour: #3d78a1;
     --primaryText: #293a57;
     --warningText: #ff0000;
@@ -22,7 +23,7 @@
     --mainHeaderH1FontSize: 64px;
     --introTextPFontSize: 36px;
     --otherHeadingsH2FontSize: 24px;
-    --paragraphFontSize: 24px;
+    --paragraphFontSize: 20px;
 
 }
 
@@ -46,7 +47,7 @@ h2 {
     font-size: var(--otherHeadingsH2FontSize); 
     font-weight: 400px;
 }
-p {
+p, a {
     font-family: var(--paragraphFontFamily);
     font-size: var(--paragraphFontSize);
     color: var(--primaryText);
@@ -55,3 +56,39 @@ p {
     color: red;
 }
 
+/* sidebar */
+#sidebar {
+    width: 10vw;
+    min-width: 200px;
+    height: 100vh;
+    background-color: var(--main-colour);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-top: 15px;
+    margin: 0;
+}
+#logoContainer {
+    margin-bottom:30px;
+}
+#sidebarMenu {
+    display: flex;
+    flex-direction: column;
+}
+#sidebarMenu a {
+    text-decoration: none;
+}
+.sideBarMenuOptions {
+    height: 60px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding: 3px;
+    background-color: var(--pods);
+}
+.sideBarMenuOptions p {
+    font-size: 17px;
+}
+#sideBarMenuCreateComp {
+    background-color: var(--light-shades);
+}
