@@ -1,6 +1,7 @@
 import { Sidebar } from "./Sidebar"
 import { RecentGroups } from "./pods/recentGroups"
 import { AddGroup } from './pods/AddGroup'
+import { TextboxPod } from './pods/TextboxPod'
 
 export const MainApp = () => {
     return (
@@ -8,7 +9,8 @@ export const MainApp = () => {
             <Sidebar />
             <div id="mainBodyContainer"> 
                 <RecentGroups />
-                <AddGroup />
+                <TextboxPod />
+
             </div>
         </div>
     )
