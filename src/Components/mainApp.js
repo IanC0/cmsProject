@@ -1,15 +1,13 @@
 import { Sidebar } from "./Sidebar"
-import { RecentComponents } from "./pods/recentComponents"
+import { RecentGroups } from "./pods/recentGroups"
 
 export const MainApp = () => {
     return (
         <div id="mainContainer">
             <Sidebar />
             <div id="mainBodyContainer"> 
-                <RecentComponents />
-                <RecentComponents />
+                <RecentGroups />
             </div>
-
         </div>
     )
 }

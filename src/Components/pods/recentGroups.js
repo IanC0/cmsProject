@@ -1,9 +1,9 @@
-export const RecentComponents = () => {
+export const RecentGroups = () => {
 
     return (
         <div className="halfPod">
             <div className="halfPodHeader">
-            <h2>Recent Components</h2>
+            <h2>Recent Groups</h2>
             </div>
             <div id="recentComponentsBodyContainer">
                 <div id="recentComponentsBody">
