@@ -40,14 +40,15 @@ h1 {
     font-style: italic;
     font-size: var(--introTextPFontSize);
 }
-h2 {
+h2, th {
     font-family: var(--mainHeaderFontFamily);
     font-size: var(--mainHeaderH1FontSize);
     color: var(--primaryText);
     font-size: var(--otherHeadingsH2FontSize); 
     font-weight: 400px;
+    padding-left: 8px;
 }
-p, a {
+p, a, td {
     font-family: var(--paragraphFontFamily);
     font-size: var(--paragraphFontSize);
     color: var(--primaryText);
@@ -106,6 +107,7 @@ p, a {
 
 
 /* PODS */
+
 .halfPod {
     width: 36vw;
     height: 60vh;
@@ -128,4 +130,51 @@ p, a {
     height:87%;
     background-color: var(--light-shades);
     border-radius: 12px;
+}
+.podTableContainer {
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    height: 100%;
+}
+.podTable {
+    width:98%;
+    height: 97%;
+    text-align: center;    
+    border-collapse: collapse;
+    display:block;
+    white-space: nowrap;
+    overflow-x: scroll;
+    }
+.podTable th {
+    font-size: 14px;
+    width: 43%;
+}
+.podTable td {
+    font-size: 14px;
+}
+.podTable td, .podTable th {
+    border: .5px dotted var(--primaryText);
+    }
+.podTable tr:first-child th {
+    border-top: 0;        
+  }
+.podTable tr:last-child td {
+  border-bottom: 0;
+    }
+.podTable tr td:first-child,
+.podTable tr th:first-child {
+  border-left: 0;
+    }
+.podTable tr td:last-child,
+.podTable tr th:last-child {
+  border-right: 0;
+    }
+    
+
+
+#supportMainContainer {
+    padding-left: 15px;
+    padding-right:15px;
+    padding-top: 15px;
 }
