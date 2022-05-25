@@ -4,18 +4,17 @@ import { AddGroup } from './pods/AddGroup'
 import { TextboxPod } from './pods/TextboxPod'
 import { BannerPod } from './pods/BannerPod'
 import { MediaPod } from './pods/MediaPod'
+import { NewFormPod } from './pods/NewFormPod'
 
 export const MainApp = () => {
     return (
         <div id="mainContainer">
             <Sidebar />
             <div id="mainBodyContainer"> 
-                <RecentGroups />
-                <AddGroup />
+                <NewFormPod />          
                 {/* <TextboxPod />
                 <BannerPod />
                 <MediaPod /> */}
-
             </div>
         </div>
     )
