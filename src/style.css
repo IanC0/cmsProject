@@ -144,7 +144,7 @@ p, a, td, label, select, input {
 }
 
 .halfPodHeader {
-    height: 8%;
+    height: 15%;
 }
 
 .podTableContainer {
@@ -187,6 +187,12 @@ p, a, td, label, select, input {
 .podTable tr th:last-child {
   border-right: 0;
     }
+
+/* 2 half pods alongside each other */
+.formPodsContainer {
+    display: flex;
+    justify-content: space-between;
+}
     
 /* PODS - full pod */ 
 .fullPodContainer {
@@ -239,7 +245,6 @@ width: 100%;
     height: 92%;
     overflow-x: scroll;
 }
-
 #supportMainContainer {
     padding-left: 15px;
     padding-right:15px;
@@ -298,6 +303,33 @@ button {
 
 }
 
+/* Create Form */
+.formListRowContainer {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+.formButton {
+    border: none !important;
+    background-color:transparent;
+    box-shadow: none !important;
+    cursor:pointer;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: 15px;
+}
+.dualButtonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dualButtons {
+    font-size: 15px;
+
 ul {
     list-style-type: none;
     padding: 0.5em 1em;
@@ -330,4 +362,5 @@ li {
 .textButton:hover {
     color: var(--main-colour);
     cursor: pointer;
+
 }
