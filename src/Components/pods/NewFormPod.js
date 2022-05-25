@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { FiArrowLeft, FiChevronUp, FiChevronDown } from "react-icons/fi";
+import { CgArrowLeft } from "react-icons/cg";
+import { IconContext } from "react-icons"; 
 
 
-export const NewFormPod = () => {
+export const NewFormPod = ({ setAppState }) => {
 
     const [formName, setFormName] = useState("blank");
     const [formType, setFormType] = useState("email");
@@ -33,16 +35,17 @@ export const NewFormPod = () => {
             let tempItemToBeMoved = tempArray.slice(index,index + 1);
             let tempSliceItem = [...tempArray].slice(0,index).concat(tempArray.slice(index + 1,))
             tempSliceItem.splice(index - 1,0, ...tempItemToBeMoved)
-            setFormList(tempSliceItem)   
+            setFormList(tempSliceItem);
         }
     }
 
     return (
-        <div className="formPodsContainer">
-            <div className="halfPod">
+        <div id="mainBodyContainer">
+            <div className="pod halfPod">
                 <div className="halfPodHeader">
-                    <FiArrowLeft />
-                    <h2>Form</h2>
+                <IconContext.Provider value={{ className: "back-arrow textButton" }}>
+                    <CgArrowLeft onClick={() => setAppState("Welcome")}/>
+                </IconContext.Provider>                    <h2>Form</h2>
                     <form onSubmit={(e) => formHandler(e)}>                        
                         <div className="inputGroup">
                             <label htmlFor="formName">Name: </label>
@@ -66,38 +69,46 @@ export const NewFormPod = () => {
                     </form>                
                 </div>
             </div>
-            <div className="halfPod">
+
+            
+            <div className="pod halfPod">
                 <div className="halfPodHeader">
-                    <FiArrowLeft />
+                <IconContext.Provider value={{ className: "back-arrow textButton" }}>
+                    <CgArrowLeft onClick={() => setAppState("Welcome")}/>
+                </IconContext.Provider>
                     <h2>Form Fields</h2>
                 </div>
-                <div id="formBuild">
-                    
-                    <ol>
-                    {formList.map((x,index) => {
-                        if (index == 0) {
-                            return <div className="formListRowContainer" key={index}>
-                                <button className="formButton" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button>
-                                <li>Name: {x.name} Type: {x.type}</li>
-                                </div>
-                        } else if (index == (formList.length-1)) {
-                            return <div className="formListRowContainer" key={index}>
-                                <button className="formButton" onClick={() => formButtonHandler("down", index)}><FiChevronUp /></button>
-                                <li>Name: {x.name} Type: {x.type}</li>
-                                </div>
-                        } else {
-                           return <div className="formListRowContainer" key={index}>
-                               <div className="dualButtonContainer">
-                                    <button className="formButton dualButtons" onClick={() => formButtonHandler("up", index)}><FiChevronUp /></button>
-                                    <button className="formButton dualButtons" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button>
-                               </div>
-                               <li>Name: {x.name} Type: {x.type}</li>
-                               </div> 
-                        }
+                <div class="formBuildContainer">
+                    <div id="formBuild">
                         
-                    })}
-                    </ol>
-                    
+                        <table className="fullWidthTable">
+                        <tr><th>Order</th><th>Field Name</th><th>Field Type</th></tr>
+                        {formList.map((x,index) => {
+                            if (index == 0) {
+                                return <tr key={index}>
+                                    <td><button className="formButton" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button></td>
+                                    <td><p>{x.name}</p></td><td><p>{x.type}</p></td>
+                                    </tr>
+                            } else if (index == (formList.length-1)) {                                
+                                return <tr key={index}>
+                                    <td><button className="formButton" onClick={() => formButtonHandler("up", index)}><FiChevronUp /></button></td>
+                                    <td><p>{x.name}</p></td><td><p>{x.type}</p></td>
+                                    </tr>
+                            } else {
+                            return <tr key={index}>
+                                
+                                <td><div className="dualButtonContainer">
+                                        <button className="formButton dualButtons" onClick={() => formButtonHandler("up", index)}><FiChevronUp /></button>
+                                        <button className="formButton dualButtons" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button>
+                                </div></td>
+                                <td><p>{x.name}</p></td><td><p>{x.type}</p></td>
+                                </tr> 
+                            }
+                            
+                        })}
+                        </table>
+                        
+                    </div>
                 </div>
                 </div>
         </div>

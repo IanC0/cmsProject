@@ -223,6 +223,17 @@ p, a, td, label, select, input {
     background-color: var(--light-shades);
     border-radius: 12px;
 }
+.formBuildContainer {
+    display: flex;
+    justify-content: center;
+    height: 82%;
+}
+#formBuild {
+    width: 95%;
+    background-color: var(--light-shades);
+    border-radius: 12px;
+    height: 100%;
+}
 #supportBodyContainer {
 padding: 12px;
 height: 86%;
@@ -329,7 +340,7 @@ button {
 }
 .dualButtons {
     font-size: 15px;
-
+}
 ul {
     list-style-type: none;
     padding: 0.5em 1em;
@@ -363,4 +374,11 @@ li {
     color: var(--main-colour);
     cursor: pointer;
 
+}
+
+.fullWidthTable {
+    width: 100%;
+}
+.fullWidthTable td {
+    text-align: center;
 }

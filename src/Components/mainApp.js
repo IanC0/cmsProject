@@ -42,6 +42,10 @@ export const MainApp = () => {
                     appState=="AddMedia" &&
                     <MediaPod setAppState={setAppState} />                
                 }
+                {
+                    appState=="AddForm" && 
+                    <NewFormPod setAppState={setAppState}/>
+                }
             </main>
         </div>
     )
