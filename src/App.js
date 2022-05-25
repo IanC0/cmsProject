@@ -11,7 +11,6 @@ function App() {
   return (
     <div className="App">
       <MainApp />
-      <Support />
       {/* {!user && <AccessForm setUser={setUser} />}
       {user && <MainApp />}     */}
     </div>

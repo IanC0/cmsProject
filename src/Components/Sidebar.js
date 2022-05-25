@@ -1,4 +1,7 @@
 import {useState, useRef} from "react";
+import Logo from "../images/cmsLogo.png";
+import supportIcon from "../images/supportIcon.png"
+
 
 export const Sidebar = () => {
     // ### useRefs and useState ###
@@ -26,13 +29,10 @@ export const Sidebar = () => {
         e.target.style.background="#A4B4CA"
         }
     }
-
-
-
     return (
         <div id="sidebar">
             <div id="logoContainer">
-                <a href="#" id="logo">logo</a>
+                <a href="#" ><img src={Logo} id="logo"/></a>
             </div>
                 <div id="sidebarMenu">                    
                     <a href="#" 
@@ -49,6 +49,11 @@ export const Sidebar = () => {
                     onMouseEnter={mouseEnterHandler(modifyComponentRef)} 
                     onClick={onClickHandler(modifyComponentRef)}
                     onMouseLeave={mouseLeaveHandler(modifyComponentRef)}><p >Manage components</p></a>
+                </div>
+                <div id="supportIconContainer">
+                    <a href="#">
+                        <img src={supportIcon} id="supportIcon"/>
+                    </a>
                 </div>
             </div>
         
