@@ -1,7 +1,7 @@
 export const RecentGroups = () => {
 
     return (
-        <div className="halfPod">
+        <div className="pod halfPod">
             <div className="halfPodHeader">
             <h2>Recent Groups</h2>
             </div>
