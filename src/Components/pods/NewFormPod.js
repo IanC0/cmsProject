@@ -7,7 +7,7 @@ import { IconContext } from "react-icons";
 export const NewFormPod = ({ setAppState }) => {
 
     const [formName, setFormName] = useState("blank");
-    const [formType, setFormType] = useState("email");
+    const [formType, setFormType] = useState("field");
     const [formList, setFormList] = useState([]);
 
     const formHandler = (e) => {
