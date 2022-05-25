@@ -19,7 +19,22 @@ export const NewFormPod = () => {
         let tempFormListArray = [...formList];
         tempFormListArray.push(tempObj)
         setFormList(tempFormListArray)
-        console.log(formList)
+    }
+
+    const formButtonHandler = (param, index) => {
+        if (param == "down") {
+            let tempArray = [...formList];
+            let tempItemToBeMoved = tempArray.slice(index,index + 1);
+            let tempSliceItem = [...tempArray].slice(0,index).concat(tempArray.slice(index + 1,))
+            tempSliceItem.splice(index + 1,0, ...tempItemToBeMoved)
+            setFormList(tempSliceItem)            
+        } if (param == "up") {
+            let tempArray = [...formList];
+            let tempItemToBeMoved = tempArray.slice(index,index + 1);
+            let tempSliceItem = [...tempArray].slice(0,index).concat(tempArray.slice(index + 1,))
+            tempSliceItem.splice(index - 1,0, ...tempItemToBeMoved)
+            setFormList(tempSliceItem)   
+        }
     }
 
     return (
@@ -62,19 +77,19 @@ export const NewFormPod = () => {
                     {formList.map((x,index) => {
                         if (index == 0) {
                             return <div className="formListRowContainer" key={index}>
-                                <button className="formButton"><FiChevronDown /></button>
+                                <button className="formButton" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button>
                                 <li>Name: {x.name} Type: {x.type}</li>
                                 </div>
                         } else if (index == (formList.length-1)) {
                             return <div className="formListRowContainer" key={index}>
-                                <button className="formButton"><FiChevronUp /></button>
+                                <button className="formButton" onClick={() => formButtonHandler("down", index)}><FiChevronUp /></button>
                                 <li>Name: {x.name} Type: {x.type}</li>
                                 </div>
                         } else {
                            return <div className="formListRowContainer" key={index}>
                                <div className="dualButtonContainer">
-                                    <button className="formButton dualButtons"><FiChevronUp /></button>
-                                    <button className="formButton dualButtons"><FiChevronDown /></button>
+                                    <button className="formButton dualButtons" onClick={() => formButtonHandler("up", index)}><FiChevronUp /></button>
+                                    <button className="formButton dualButtons" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button>
                                </div>
                                <li>Name: {x.name} Type: {x.type}</li>
                                </div> 
