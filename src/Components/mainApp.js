@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Sidebar } from "./Sidebar"
 import { RecentGroups } from "./pods/recentGroups"
 import { AddGroup } from './pods/AddGroup'
@@ -7,15 +8,41 @@ import { MediaPod } from './pods/MediaPod'
 import { NewFormPod } from './pods/NewFormPod'
 
 export const MainApp = () => {
+
+    const [appState, setAppState] = useState();
+    const [addingGroup, setAddingGroup] = useState();
+    const [groupName, setGroupName] = useState();
+
     return (
         <div id="mainContainer">
             <Sidebar />
-            <div id="mainBodyContainer"> 
-                <NewFormPod />          
-                {/* <TextboxPod />
-                <BannerPod />
-                <MediaPod /> */}
-            </div>
+            <main id="mainBodyContainer">
+                {
+                    (!appState || appState == "Welcome") &&
+                    <>
+                        <RecentGroups />
+                        <AddGroup 
+                            setAppState={setAppState}
+                            addingGroup={addingGroup}
+                            setAddingGroup={setAddingGroup}
+                            groupName={groupName}
+                            setGroupName={setGroupName}
+                        />
+                    </>
+                }
+                {
+                    appState=="AddTextbox" &&
+                    <TextboxPod setAppState={setAppState} />
+                }
+                {
+                    appState=="AddBanner" &&
+                    <BannerPod setAppState={setAppState} />                
+                }
+                {
+                    appState=="AddMedia" &&
+                    <MediaPod setAppState={setAppState} />                
+                }
+            </main>
         </div>
     )
 }

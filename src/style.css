@@ -27,6 +27,10 @@
 
 }
 
+body {
+    margin: 0;
+}
+
 h1 {
     font-family: var(--mainHeaderFontFamily);
     font-size: var(--mainHeaderH1FontSize);
@@ -48,7 +52,7 @@ h2, th {
     font-weight: 400px;
     padding-left: 8px;
 }
-p, a, td, label, select {
+p, a, td, label, select, input {
     font-family: var(--paragraphFontFamily);
     font-size: var(--paragraphFontSize);
     color: var(--primaryText);
@@ -112,26 +116,36 @@ p, a, td, label, select {
 #mainContainer {
     display: flex;    
 }
+
 #mainBodyContainer {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    height: 100vh;
+    padding: 2rem;
 }
 
 
 /* PODS - half pod*/
 
-.halfPod {
-    width: 36vw;
-    height: 60vh;
+.pod {
     background-color: var(--pods);
     border-radius: 5px;
-    padding: 1rem; /* MM */
+    padding: 1rem;
 }
+
+.halfPod {
+    width: 36vw;
+    height: 60%;
+}
+
+.podExpand {
+    height: fit-content;
+}
+
 .halfPodHeader {
     height: 15%;
 }
-
 
 .podTableContainer {
     display: flex;
@@ -147,7 +161,8 @@ p, a, td, label, select {
     display:block;
     white-space: nowrap;
     overflow-x: scroll;
-    }
+}
+
 .podTable th {
     font-size: 14px;
     width: 43%;
@@ -186,7 +201,7 @@ p, a, td, label, select {
 }
 .fullPod {
     width: 72vw;
-    height: 50vh;
+    height: fit-content;
     background-color: var(--pods);
     border-radius: 5px;
     margin-bottom: 15px;
@@ -195,18 +210,16 @@ p, a, td, label, select {
     height: 8%;
 }
 
-
-
 /* PODS specific styling */
 #recentComponentsBodyContainer {
     display: flex;
     justify-content: center;
-    height: 98%;
+    height: 75%;
     width: 100%;
 }
-#recentComponentsBody {
+
+#recentComponentsBody, #componentSelect {
     width: 95%;
-    height:87%;
     background-color: var(--light-shades);
     border-radius: 12px;
 }
@@ -239,22 +252,34 @@ width: 100%;
 }
 
 /* MM ADDED STYLES */
+
 .inputGroup {
-    display: flex;
     margin-bottom: 0.5rem;
+}
+
+.inputGroupLine {
+    display: flex;
     justify-content: space-between;
 }
 
-label {
-    width: 15%;
+.inputGroupStack {
+    display: block;   
 }
 
-.inputGroup input, 
-.inputGroup textarea,
-.inputGroup select,
+.inputGroupLine input, 
+.inputGroupLine textarea,
+.inputGroupLine select,
 #htmlDisplay {
     margin: 0 0.5rem;
     width: 85%;
+}
+
+.inputGroupStack input, 
+.inputGroupStack textarea,
+.inputGroupStack select,
+#htmlDisplay {
+    margin: 0;
+    width: 100%;
 }
 
 #htmlDisplay {
@@ -304,4 +329,38 @@ button {
 }
 .dualButtons {
     font-size: 15px;
+
+ul {
+    list-style-type: none;
+    padding: 0.5em 1em;
+
+}
+
+li {
+    padding-bottom: 0.5em;
+}
+
+#componentSelect a {
+    text-decoration: none;
+}
+
+#componentSelect a:hover {
+    cursor: pointer;
+    color: var(--main-colour);
+}
+
+.back-arrow {
+    font-size: 1.5rem;
+    color: var(--primaryText);
+}
+
+.textButton:hover {
+    color: var(--main-colour);
+    cursor: pointer;
+}
+
+.textButton:hover {
+    color: var(--main-colour);
+    cursor: pointer;
+
 }
