@@ -70,11 +70,18 @@ p, a, td {
     margin: 0;
 }
 #logoContainer {
+    padding-top: 3px;
     margin-bottom:30px;
+    padding-left:15px;
+}
+#logo {
+    height: 4vh;
+    width: auto;
 }
 #sidebarMenu {
     display: flex;
     flex-direction: column;
+    height: 75vh;
 }
 #sidebarMenu a {
     text-decoration: none;
@@ -93,11 +100,17 @@ p, a, td {
 #sideBarMenuCreateComp {
     background-color: var(--light-shades);
 }
-
+#supportIconContainer {
+    display: flex;
+    justify-content: center;
+}
+#supportIcon {
+    height: 5vh;
+    width: auto;    
+}
 
 #mainContainer {
-    display: flex;
-    
+    display: flex;    
 }
 #mainBodyContainer {
     display: flex;
@@ -106,7 +119,7 @@ p, a, td {
 }
 
 
-/* PODS */
+/* PODS - half pod*/
 
 .halfPod {
     width: 36vw;
@@ -118,19 +131,7 @@ p, a, td {
     height: 8%;
 }
 
-#recentComponentsBodyContainer {
-    display: flex;
-    justify-content: center;
-    height: 98%;
 
-
-}
-#recentComponentsBody {
-    width: 95%;
-    height:87%;
-    background-color: var(--light-shades);
-    border-radius: 12px;
-}
 .podTableContainer {
     display: flex;
     justify-content: center;
@@ -173,8 +174,58 @@ p, a, td {
     
 
 
-#supportMainContainer {
-    padding-left: 15px;
-    padding-right:15px;
-    padding-top: 15px;
+
+
+/* PODS - full pod */ 
+.fullPodContainer {
+    display: flex;
+    justify-content: center;
+}
+.fullPod {
+    width: 72vw;
+    height: 50vh;
+    background-color: var(--pods);
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.fullPodHeader {
+    height: 8%;
+}
+
+
+
+/* PODS specific styling */
+#recentComponentsBodyContainer {
+    display: flex;
+    justify-content: center;
+    height: 98%;
+    width: 100%;
+}
+#recentComponentsBody {
+    width: 95%;
+    height:87%;
+    background-color: var(--light-shades);
+    border-radius: 12px;
+}
+#supportBodyContainer {
+padding: 12px;
+height: 86%;
+width: 100%;
+}
+.supportComponentContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 92%;
+}
+
+.supportComponentContainer p, .supportComponentContainer a{
+   font-size: 15px;
+}
+.supportComponentsBody {
+    width: 95%;
+    background-color: var(--light-shades);
+    border-radius: 12px;
+    height: 92%;
+    overflow-x: scroll;
 }
