@@ -46,6 +46,10 @@ export const MainApp = () => {
                     appState=="AddButton" &&
                     <ButtonPod setAppState={setAppState} />                
                 }
+                {
+                    appState=="AddForm" && 
+                    <NewFormPod setAppState={setAppState}/>
+                }
             </main>
         </div>
     )
