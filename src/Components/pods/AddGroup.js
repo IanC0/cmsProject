@@ -7,16 +7,14 @@ export const AddGroup = ({ setAppState, addingGroup, setAddingGroup, groupName, 
     return (
         <div className="pod halfPod podExpand">
             <div className="halfPodHeader">
-                {!addingGroup && <h2 class="textButton" onClick={() => setAddingGroup(true)}>Add New Group</h2>}
+                {!addingGroup && <h2 className="textButton" onClick={() => setAddingGroup(true)}>Add New Group</h2>}
                 {addingGroup &&
                     <form onSubmit={() => console.log(groupName)}>
                         <div>
-                            <IconContext.Provider value={{ className: "back-arrow textButton" }}>
-                                <CgArrowLeft onClick={() => {
-                                    setAddingGroup(false);
-                                    setGroupName("");
-                                }} />
-                            </IconContext.Provider>
+                            <CgArrowLeft className="back-arrow textButton" onClick={() => {
+                                setAddingGroup(false);
+                                setGroupName("");
+                            }} />
                         </div>
                         <div className="inputGroup inputGroupStack">
                             <label id="newGroupNameLabel" htmlFor="groupNameInput">New Group Name</label>

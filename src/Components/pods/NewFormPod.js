@@ -1,70 +1,89 @@
 import { useState } from 'react';
-import { FiArrowLeft, FiChevronUp, FiChevronDown } from "react-icons/fi";
+import { FiChevronUp, FiChevronDown } from "react-icons/fi";
 import { CgArrowLeft } from "react-icons/cg";
-import { IconContext } from "react-icons"; 
+import { submitNewComponent } from '../../utils';
 
 
 export const NewFormPod = ({ setAppState }) => {
 
-    const [formName, setFormName] = useState("blank");
-    const [formType, setFormType] = useState("field");
-    const [formList, setFormList] = useState([]);
+    const [formName, setFormName] = useState();
+    const [fieldName, setFieldName] = useState("blank");
+    const [fieldType, setFieldType] = useState("field");
+    const [fieldList, setFieldList] = useState([]);
 
-    const formHandler = (e) => {
+    const addFieldHandler = (e) => {
         e.preventDefault();
-        console.log(formName)
-        console.log(formType)
+        console.log(fieldName)
+        console.log(fieldType)
         let tempObj = {
-            name: formName,
-            type: formType
+            name: fieldName,
+            type: fieldType
         }
-        let tempFormListArray = [...formList];
-        tempFormListArray.push(tempObj)
-        setFormList(tempFormListArray)
+        let tempFieldListArray = [...fieldList];
+        tempFieldListArray.push(tempObj)
+        setFieldList(tempFieldListArray)
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        let component = {
+            name: formName,
+            component: "form",
+            formFields: fieldList,
+        }
+        submitNewComponent(component);
     }
 
     const formButtonHandler = (param, index) => {
         if (param == "down") {
-            let tempArray = [...formList];
+            let tempArray = [...fieldList];
             let tempItemToBeMoved = tempArray.slice(index,index + 1);
             let tempSliceItem = [...tempArray].slice(0,index).concat(tempArray.slice(index + 1,))
             tempSliceItem.splice(index + 1,0, ...tempItemToBeMoved)
-            setFormList(tempSliceItem)            
+            setFieldList(tempSliceItem)            
         } if (param == "up") {
-            let tempArray = [...formList];
+            let tempArray = [...fieldList];
             let tempItemToBeMoved = tempArray.slice(index,index + 1);
             let tempSliceItem = [...tempArray].slice(0,index).concat(tempArray.slice(index + 1,))
             tempSliceItem.splice(index - 1,0, ...tempItemToBeMoved)
-            setFormList(tempSliceItem);
+            setFieldList(tempSliceItem);
         }
     }
 
     return (
         <div id="mainBodyContainer">
-            <div className="pod halfPod">
-                <div className="halfPodHeader">
-                <IconContext.Provider value={{ className: "back-arrow textButton" }}>
-                    <CgArrowLeft onClick={() => setAppState("Welcome")}/>
-                </IconContext.Provider>                    <h2>Form</h2>
-                    <form onSubmit={(e) => formHandler(e)}>                        
+            <div className="pod halfPod podExpand">
+                <div className="halfPodHeader">              
+                    <CgArrowLeft className="back-arrow textButton" onClick={() => setAppState("Welcome")}/>
+                    <form onSubmit={submitHandler}>                     
                         <div className="inputGroup">
-                            <label htmlFor="formName">Name: </label>
+                            <label htmlFor="formName">Form Name: </label>
                             <input type="text" id="formName" name="formName" onChange={(e) => setFormName(e.target.value)} required/>
                         </div>
-                        <div className="inputGroup">
-                            <label htmlFor="formType">Type: </label>
-                            <select id="formType" name="formType" size="1" onChange={(e) => setFormType(e.target.value)}>
-                                <option value="input">Field</option>
-                                <option value="email">Email</option>
-                                <option value="date">Date</option>
-                                <option value="password">Password</option>
-                                <option value="number">Number</option>
-                                <option value="telNumber">Telephone Number</option>
-                                <option value="dropDown">Drop Down List</option>
-                            </select>  
-                        </div>  
-                        <div className="inputGroup">
-                            <button type="submit">Add</button>   
+                        <div id="addFieldsSubForm">
+                            <h2>Add Fields</h2>
+                            <div className="inputGroup">
+                                <label htmlFor="fieldName">Field Name: </label>
+                                <input type="text" id="fieldName" name="fieldName" onChange={(e) => setFieldName(e.target.value)} required/>
+                            </div>
+                            <div className="inputGroup">
+                                <label htmlFor="fieldType">Type: </label>
+                                <select id="fieldType" name="fieldType" size="1" onChange={(e) => setFieldType(e.target.value)}>
+                                    <option value="input">Field</option>
+                                    <option value="email">Email</option>
+                                    <option value="date">Date</option>
+                                    <option value="password">Password</option>
+                                    <option value="number">Number</option>
+                                    <option value="telNumber">Telephone Number</option>
+                                    <option value="dropDown">Drop Down List</option>
+                                </select>  
+                            </div>  
+                            <div className="inputGroup">
+                                <button type="button" onClick={(e) => addFieldHandler(e)}>Add Field</button>   
+                            </div>  
+                        </div>
+                        <div className="buttonContainer">
+                            <button type="submit">Submit</button>   
                         </div>                   
                     </form>                
                 </div>
@@ -73,9 +92,7 @@ export const NewFormPod = ({ setAppState }) => {
             
             <div className="pod halfPod">
                 <div className="halfPodHeader">
-                <IconContext.Provider value={{ className: "back-arrow textButton" }}>
-                    <CgArrowLeft onClick={() => setAppState("Welcome")}/>
-                </IconContext.Provider>
+                    <CgArrowLeft className="back-arrow textButton" onClick={() => setAppState("Welcome")}/>
                     <h2>Form Fields</h2>
                 </div>
                 <div class="formBuildContainer">
@@ -83,13 +100,13 @@ export const NewFormPod = ({ setAppState }) => {
                         
                         <table className="fullWidthTable">
                         <tr><th>Order</th><th>Field Name</th><th>Field Type</th></tr>
-                        {formList.map((x,index) => {
+                        {fieldList.map((x,index) => {
                             if (index == 0) {
                                 return <tr key={index}>
                                     <td><button className="formButton" onClick={() => formButtonHandler("down", index)}><FiChevronDown /></button></td>
                                     <td><p>{x.name}</p></td><td><p>{x.type}</p></td>
                                     </tr>
-                            } else if (index == (formList.length-1)) {                                
+                            } else if (index == (fieldList.length-1)) {                                
                                 return <tr key={index}>
                                     <td><button className="formButton" onClick={() => formButtonHandler("up", index)}><FiChevronUp /></button></td>
                                     <td><p>{x.name}</p></td><td><p>{x.type}</p></td>

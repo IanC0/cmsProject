@@ -3,24 +3,24 @@ import Logo from "../images/cmsLogo.png";
 import supportIcon from "../images/supportIcon.png"
 
 
-export const Sidebar = () => {
+export const Sidebar = ({ setAppState }) => {
     // ### useRefs and useState ###
     const createComponentRef = useRef(null);
     const modifyComponentRef = useRef(null);   
     const[page, setPage] = useState(createComponentRef)
 
-
-
     // ### hanlders for mouse entering, clicking and leaving ###
     const mouseEnterHandler = (param) => (e) => {  
         if(page != param) {
-            param.current.style.backgroundColor = "#c5cfdd" 
+            param.current.style.backgroundColor = "#c5cfdd"
         }         
     }
     const onClickHandler = (param) => (e) => {        
+        e.preventDefault();
         if (page != param) {
             page.current.style.backgroundColor = "#A4B4CA";
             param.current.style.backgroundColor = "#F3F7F8";
+            setAppState((param == modifyComponentRef) ? "ManageGroups" : "Welcome");
             setPage(param);
         }
     }

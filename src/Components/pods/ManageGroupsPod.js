@@ -1,9 +1,9 @@
-export const RecentGroups = () => {
+export const ManageGroupsPod = () => {
 
     return (
-        <div className="pod halfPod tablePod">
+        <div className="pod fullPod tablePod">
             <div className="halfPodHeader">
-            <h2>Recent Groups</h2>
+            <h2>Groups</h2>
             </div>
             <div id="recentComponentsBodyContainer">
                 <div id="recentComponentsBody">
