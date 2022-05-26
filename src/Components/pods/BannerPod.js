@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CgArrowLeft } from "react-icons/cg";
-import { IconContext } from "react-icons";
+import { submitNewComponent } from '../../utils';
 
 export const BannerPod = ({ setAppState }) => {
 
@@ -8,14 +8,23 @@ export const BannerPod = ({ setAppState }) => {
     const [bannerType, setBannerType] = useState();
     const [bannerText, setBannerText] = useState();
 
+    const submitHandler = (e) => {
+        e.preventDefault();
+        let component = {
+            name: bannerName,
+            component: "banner",
+            option: bannerType,
+            text: bannerText,
+        }
+        submitNewComponent(component);
+    }
+
     return (
         <div className="pod fullPod podExpand">
             <div className="halfPodHeader">
-                <IconContext.Provider value={{ className: "back-arrow textButton" }}>
-                    <CgArrowLeft onClick={() => setAppState("Welcome")}/>
-                </IconContext.Provider>
+                <CgArrowLeft className="back-arrow textButton" onClick={() => setAppState("Welcome")}/>
                 <h2>Banner</h2>
-                <form onSubmit={() => console.log("Submitted")}>
+                <form onSubmit={submitHandler}>
                     <div className="inputGroup inputGroupLine">
                         <label htmlFor="bannerName">Name: </label>
                         <input type="text" id="bannerName" name="bannerName" onChange={(e) => setBannerName(e.target.value)}/>

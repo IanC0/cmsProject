@@ -38,3 +38,10 @@ export const signUp = async (username, email, password, setUser, setError) => {
         setError(error.message);
     }
 }
+
+export const submitNewComponent = async (component) => {
+    console.log(`Submitting a new component: `);
+    for (const [key, value] of Object.entries(component)) {
+        console.log(`${key}: ${value}`);
+    }
+}

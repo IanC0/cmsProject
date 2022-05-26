@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CgArrowLeft } from "react-icons/cg";
-import { IconContext } from "react-icons";
+import { submitNewComponent } from '../../utils';
 
 export const MediaPod = ({ setAppState }) => {
 
@@ -10,14 +10,25 @@ export const MediaPod = ({ setAppState }) => {
     const [mediaAlt, setMediaAlt] = useState();
     const [mediaSize, setMediaSize] = useState();
 
+    const submitHandler = (e) => {
+        e.preventDefault();
+        let component = {
+            name: mediaName,
+            component: "media",
+            option: mediaType,
+            text: mediaAlt,
+            src: mediaSource,
+            size: mediaSize,
+        }
+        submitNewComponent(component);
+    }
+
     return (
         <div className="pod fullPod podExpand">
             <div className="halfPodHeader">
-                <IconContext.Provider value={{ className: "back-arrow textButton" }}>
-                    <CgArrowLeft onClick={() => setAppState("Welcome")}/>
-                </IconContext.Provider>
+                <CgArrowLeft className="back-arrow textButton" onClick={() => setAppState("Welcome")}/>
                 <h2>Media</h2>
-                <form onSubmit={() => console.log("Submitted")}>
+                <form onSubmit={submitHandler}>
                     <div className="inputGroup inputGroupLine">
                         <label htmlFor="mediaName">Name: </label>
                         <input type="text" id="mediaName" name="mediaName" onChange={(e) => setMediaName(e.target.value)}/>

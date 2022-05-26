@@ -5,6 +5,7 @@ import { AddGroup } from './pods/AddGroup'
 import { TextboxPod } from './pods/TextboxPod'
 import { BannerPod } from './pods/BannerPod'
 import { MediaPod } from './pods/MediaPod'
+import { ButtonPod } from "./pods/ButtonPod";
 import { NewFormPod } from './pods/NewFormPod'
 
 export const MainApp = () => {
@@ -41,6 +42,9 @@ export const MainApp = () => {
                 {
                     appState=="AddMedia" &&
                     <MediaPod setAppState={setAppState} />                
+                }              {
+                    appState=="AddButton" &&
+                    <ButtonPod setAppState={setAppState} />                
                 }
             </main>
         </div>
