@@ -3,8 +3,6 @@ import { useState } from "react";
 import { SignupForm } from './SignupForm';
 import { LoginForm } from './LoginForm';
 
-
-
 export const AccessForm = ({setUser}) => {
     const [needsAccount, setNeedsAccount] = useState();
 
