@@ -223,6 +223,17 @@ p, a, td, label, select, input {
     background-color: var(--light-shades);
     border-radius: 12px;
 }
+.formBuildContainer {
+    display: flex;
+    justify-content: center;
+    height: 82%;
+}
+#formBuild {
+    width: 95%;
+    background-color: var(--light-shades);
+    border-radius: 12px;
+    height: 100%;
+}
 #supportBodyContainer {
 padding: 12px;
 height: 86%;
@@ -319,7 +330,10 @@ button {
     margin-right: 15px;
     padding-top: 0px;
     padding-bottom: 0px;
-    font-size: 15px;
+    font-size: 15px;     
+}
+.formButton svg {
+    font-size: 25px;
 }
 .dualButtonContainer {
     display: flex;
@@ -329,7 +343,7 @@ button {
 }
 .dualButtons {
     font-size: 15px;
-
+}
 ul {
     list-style-type: none;
     padding: 0.5em 1em;
@@ -354,7 +368,7 @@ li {
     color: var(--primaryText);
 }
 
-.textButton:hover {
+.textButton:hover, .formButton svg:hover {
     color: var(--main-colour);
     cursor: pointer;
 }
@@ -363,4 +377,11 @@ li {
     color: var(--main-colour);
     cursor: pointer;
 
+}
+
+.fullWidthTable {
+    width: 100%;
+}
+.fullWidthTable td {
+    text-align: center;
 }
