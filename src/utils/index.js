@@ -39,9 +39,37 @@ export const signUp = async (username, email, password, setUser, setError) => {
     }
 }
 
+// export const submitNewComponent = async (component) => {
+//     console.log(`Submitting a new component: `);
+//     for (const [key, value] of Object.entries(component)) {
+//         console.log(`${key}: ${value}`);
+//     }
+// }
+
 export const submitNewComponent = async (component) => {
-    console.log(`Submitting a new component: `);
-    for (const [key, value] of Object.entries(component)) {
-        console.log(`${key}: ${value}`);
+    try {
+        // console.log(component)
+        const response = await fetch(`${process.env.REACT_APP_REST_API}component`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                componentName: component.componentName,
+                type: component.type,
+                component: component.component,
+                option: component.option,
+                text: component.text,
+                formFields: component.formFields,
+                label: component.label,
+                src: component.src,
+                size: component.size
+            }),
+        });
+        const data = await response.json();
+        console.log(data);
+        if (data.error) {
+            throw new Error(data.error)
+        }  
+    } catch (err) {
+        console.log(err.message)
     }
 }

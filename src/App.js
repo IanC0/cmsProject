@@ -10,9 +10,9 @@ function App() {
 
   return (
     <div className="App">
-      <MainApp />
-      {/* {!user && <AccessForm setUser={setUser} />}
-      {user && <MainApp />}     */}
+      {/* <MainApp /> */}
+      {!user && <AccessForm setUser={setUser} />}
+      {user && <MainApp user={user}/>}    
     </div>
   );
 }
