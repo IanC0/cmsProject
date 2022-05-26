@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       {/* <MainApp /> */}
       {!user && <AccessForm setUser={setUser} />}
-      {user && <MainApp />}    
+      {user && <MainApp user={user}/>}    
     </div>
   );
 }
