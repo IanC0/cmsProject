@@ -57,6 +57,20 @@ p, a, td, label, select, input {
     font-size: var(--paragraphFontSize);
     color: var(--primaryText);
 }
+
+td, th {
+    padding: 0.25em;
+}
+
+tbody tr:hover {
+    background-color: #A4B4CA;
+    cursor: pointer;
+}
+
+tr:nth-child(even) {
+    background-color: #c5cfdd;
+}
+
 .warningText {
     color: red;
 }
@@ -136,7 +150,6 @@ p, a, td, label, select, input {
 
 .halfPod {
     width: 36vw;
-    height: 60%;
 }
 
 .podExpand {
@@ -150,15 +163,14 @@ p, a, td, label, select, input {
 .podTableContainer {
     display: flex;
     justify-content: center;
-    padding: 3px;
     height: 100%;
+    overflow: auto;
+    border-radius: 12px;
 }
 .podTable {
-    width:98%;
-    height: 97%;
+    width:100%;
     text-align: center;    
     border-collapse: collapse;
-    display:block;
     white-space: nowrap;
     overflow-x: scroll;
 }
@@ -166,6 +178,9 @@ p, a, td, label, select, input {
 .podTable th {
     font-size: 14px;
     width: 43%;
+    background: #F3F7F8;
+    position: sticky;
+    top: 0;
 }
 .podTable td {
     font-size: 14px;
@@ -206,8 +221,13 @@ p, a, td, label, select, input {
     border-radius: 5px;
     margin-bottom: 15px;
 }
+
 .fullPodHeader {
     height: 8%;
+}
+
+.tablePod {
+    height: 60%;
 }
 
 /* PODS specific styling */
@@ -385,4 +405,12 @@ li {
 }
 .fullWidthTable td {
     text-align: center;
+}
+
+#addFieldsSubForm {
+    border: var(--primaryText) solid 1px;
+    border-radius: 15px;
+    margin: 0.5em;
+    padding: 0 1em 1em 1em;
+    background-color: var(--pods1);
 }
