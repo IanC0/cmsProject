@@ -330,7 +330,10 @@ button {
     margin-right: 15px;
     padding-top: 0px;
     padding-bottom: 0px;
-    font-size: 15px;
+    font-size: 15px;     
+}
+.formButton svg {
+    font-size: 25px;
 }
 .dualButtonContainer {
     display: flex;
@@ -365,7 +368,7 @@ li {
     color: var(--primaryText);
 }
 
-.textButton:hover {
+.textButton:hover, .formButton svg:hover {
     color: var(--main-colour);
     cursor: pointer;
 }
