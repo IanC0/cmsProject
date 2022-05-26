@@ -2,18 +2,17 @@ const mongoose = require("mongoose");
 
 const componentSchema = new mongoose.Schema({
     component: {
+        type: String,
         enum: ['text', 'form', 'media', 'button', 'banner', 'hader', 'form field - email', 'form field - date', 'form field - drop down', 'form field - number', 'form field - telephone', 'form field - button'],
-        required, true
-    },
-    id: {
-
-    },
-    name: {
+        required: true
+    },    
+    componentName: {
         type: String,
         unique: true,
         required: true
     },
     type: {
+        type: String,
         enum: ['form','media','button','header', 'formFieldEmail', 'formFieldDate','formFieldNumber','formFieldTelephoneNumber','formFieldButton']
     },
     option: {
@@ -22,9 +21,9 @@ const componentSchema = new mongoose.Schema({
     text: {
         type: String
     },
-    formFields: {
-        type: Array
-    },
+    formFields: [{
+        type: String
+    }],
     label: {
         type: String
     },
@@ -33,7 +32,12 @@ const componentSchema = new mongoose.Schema({
     },
     size: {
         type: String
-    }
+    },
+    components: [
+        {
+            id: Number,
+        }
+    ]
 })
 
 const Component = mongoose.model("Component", componentSchema);

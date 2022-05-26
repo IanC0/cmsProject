@@ -12,11 +12,11 @@ export const ButtonPod = ({ setAppState }) => {
     const submitHandler = (e) => {
         e.preventDefault();
         let component = {
-            name: buttonName,
+            componentName: buttonName,
             component: "button",
             option: buttonType,
             src: buttonUrl,
-            size: buttonSize,
+            size: buttonSize
         }
         submitNewComponent(component);
     }
