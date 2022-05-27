@@ -10,7 +10,11 @@ const groupSchema = new mongoose.Schema({
         {
             componentId: String,
         }
-    ]
+    ],
+    dateModified: {
+        type: Date,
+        required: true,
+    }
 });
 
 const Group = mongoose.model("Group", groupSchema);
