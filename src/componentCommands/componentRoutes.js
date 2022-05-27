@@ -4,6 +4,7 @@ const { addComponent, listComponents, deleteComponent, updateComponent } = requi
 const componentRouter = Router();
 
 componentRouter.post("/component", addComponent);
+componentRouter.post("/list", listComponents)
 componentRouter.get("/component", listComponents);
 componentRouter.put("/component", updateComponent);
 componentRouter.delete("/component", deleteComponent);

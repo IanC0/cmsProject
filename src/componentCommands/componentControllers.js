@@ -12,6 +12,9 @@ exports.addComponent = async(req, res) => {
 
 exports.listComponents = async(req, res) => {
     try {
+        // const listOfComponents = await Component.find({});
+        // res.status(200).send( listOfComponents );
+
         if (!req.body.componentName || (req.body.componentName == "")) {
         const listOfComponents = await Component.find({});
         res.status(200).send( listOfComponents );
