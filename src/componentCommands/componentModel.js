@@ -40,7 +40,10 @@ const componentSchema = new mongoose.Schema({
         {
             id: Number,
         }
-    ]
+    ],
+    dateModified: {
+        type: Date,
+    }
 })
 
 const Component = mongoose.model("Component", componentSchema);
