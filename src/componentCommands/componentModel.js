@@ -25,7 +25,8 @@ const componentSchema = new mongoose.Schema({
         type: String
     },
     formFields: [{
-        type: String
+        fieldName: String,
+        fieldType: String
     }],
     label: {
         type: String
