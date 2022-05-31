@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const componentSchema = new mongoose.Schema({
     component: {
         type: String,
-        enum: ['text', 'form', 'media', 'button', 'banner', 'hader', 'form field - email', 'form field - date', 'form field - drop down', 'form field - number', 'form field - telephone', 'form field - button'],
+        enum: ['Text', 'Form', 'Media', 'Button', 'Banner', 'Header', 'form field - email', 'form field - date', 'form field - drop down', 'form field - number', 'form field - telephone', 'form field - button'],
         required: true
     },
     assignedToGroup: {
@@ -16,7 +16,7 @@ const componentSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ['form','media','button','header', 'formFieldEmail', 'formFieldDate','formFieldNumber','formFieldTelephoneNumber','formFieldButton']
+        enum: ['Form','Media','Button','Header', 'formFieldEmail', 'formFieldDate','formFieldNumber','formFieldTelephoneNumber','formFieldButton']
     },
     option: {
         type: String,
