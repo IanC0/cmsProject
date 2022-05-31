@@ -33,9 +33,9 @@ exports.listComponents = async(req, res) => {
 
 exports.updateComponent = async(req, res) => {
     try {
-        await Component.findOneAndUpdate({ componentName: req.body.componentName }, req.body)
-        const updatedComponentConfirmation = await Component.find({componentName: req.body.componentName});
-        res.status(200).send(updatedComponentConfirmation);
+        await Component.findOneAndUpdate({ _id: req.body._id }, req.body)
+        const updatedComponentConfirmation = await Component.find({});
+        res.status(200).send(req.body);
     } catch (err) {
         console.log(err);
         res.status(500).send({ error: err.message })
