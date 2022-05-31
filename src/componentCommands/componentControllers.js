@@ -31,6 +31,16 @@ exports.listComponents = async(req, res) => {
     }
 }
 
+exports.getComponentsByGroup = async (req, res) => {
+    try {
+        const groups = await Component.find(req.body);
+        res.status(200).send({ groups });
+    } catch (err) {
+        console.log(error);
+        res.status(500).send({ error: error.message });
+    }
+}
+
 exports.updateComponent = async(req, res) => {
     try {
         await Component.findOneAndUpdate({ _id: req.body._id }, req.body)
