@@ -6,9 +6,9 @@ const componentSchema = new mongoose.Schema({
         enum: ['text', 'form', 'media', 'button', 'banner', 'hader', 'form field - email', 'form field - date', 'form field - drop down', 'form field - number', 'form field - telephone', 'form field - button'],
         required: true
     },
-    assignedToGroup: [{
+    assignedToGroup: {
         type: String,
-    }],
+    },
     componentName: {
         type: String,
         unique: true,
